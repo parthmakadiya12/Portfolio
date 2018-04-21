@@ -1,0 +1,3 @@
+function clickHandle() {
+    alert('Hello');
+}
