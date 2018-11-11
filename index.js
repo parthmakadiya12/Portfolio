@@ -12,8 +12,8 @@ function menuBar() {
   }
 }
 
-let  circle = document.querySelector(".circle");
-  circle.style.strokeDasharray=30;
+// let  circle = document.querySelector(".circle");
+//   circle.style.strokeDasharray=30;
 
 
 
