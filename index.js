@@ -55,5 +55,3 @@ function plusDiv(n=+1){
   setTimeout(plusDiv, 2000);
 }
 plusDiv(+1);
-
-//https://pixelfordinner.com/
