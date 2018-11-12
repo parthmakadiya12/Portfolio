@@ -12,23 +12,48 @@ function menuBar() {
   }
 }
 
-// let  circle = document.querySelector(".circle");
-//   circle.style.strokeDasharray=30;
 
 
+let circle = document.querySelector('circle');
+let radius = circle.r.baseVal.value;
+let circumference = radius * 2 * Math.PI;
 
-var canvas = document.getElementById('myCanvas');
-// var context = canvas.getContext('2d');
-// context.beginPath();
-// //	context.arc(x,y,r,sAngle,eAngle,counterclockwise);
-// function progress(){
-//   for(var i=0;i<10;i++){
-//     context.arc(256,256,100,i*0.1*Math.PI,1.5*Math.PI,0);
-//     context.strokeStyle='#ffffff';
-//     context.lineWidth=10;
-//     context.stroke(); 
-//     context.
-//   }
-// }
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = `${circumference}`;
 
-// progress();
+function setProgress(percent) {
+  const offset = circumference - percent / 100 * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
+
+let slideElement = document.getElementsByClassName("sliderContent");
+let percentageSVG=document.querySelector(".percentageSVG");
+let data=[];
+let slideIndex = 1;
+showDivs(slideIndex);
+
+for(let i=1;i<=slideElement.length;i++){
+  let part=100/slideElement.length;
+  data.push(part*i);
+}
+
+function showDivs(n) {
+  let i;
+  if (n > slideElement.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slideElement.length} ;
+  for (i = 0; i < slideElement.length; i++) {
+    slideElement[i].style.display = "none"; 
+  }
+  setProgress(data[slideIndex-1]);
+  console.log(percentageSVG)
+  percentageSVG.innerHTML=data[slideIndex-1]
+  slideElement[slideIndex-1].style.display = "flex";
+}
+function plusDiv(n=+1){
+  showDivs(slideIndex += n);
+  //setTimeout(plusDiv, 2000);
+}
+plusDiv(+1);
+
+//https://pixelfordinner.com/

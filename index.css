@@ -7,6 +7,12 @@
     margin: 0 0 0 0;
     font-family: 'Chakra Petch','Josefin Sans','Raleway', sans-serif;
 }
+a{
+    all:unset;
+}
+img{
+    height: 65px;
+}
 .navbar{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
@@ -60,17 +66,20 @@
 }
 .sideMenu{
     all: unset;
-    margin: 25px;
+    margin: 15px;
     display: none;
     right: 12px;
     top: 12px;
+    right: 0;
+    position: absolute;
 }
+
 @media screen and (max-width: 600px) {
     .navbar a:not(:first-child) {display: none;}
     .navbar ul {display: none;}
 
     .navbar a.sideMenu {
-        display: flex;
+        display: -webkit-box;
     }
     .navbar{
         justify-content: space-between;
@@ -198,50 +207,132 @@
     color: #fff;
 }
 svg{
-    height: 250px;
-    width:250px;
+    height: fit-content;
+    width:fit-content;
 }
 .flex-wrapper {
     display: flex;
     flex-flow: row nowrap;
-  }
+}
+
+/* for canvas */
+
+
+.progress-ring {
   
-  .single-chart {
-    width: 33%;
-    justify-content: space-around ;
-  }
-  
-  .circular-chart {
-    display: block;
-    margin: 10px auto;
-    max-width: 80%;
-    max-height: 250px;
-  }
-  
-  .circle-bg {
-    fill: none;
-    stroke-width: 3.8;
-  }
-  
-  .circle {
-    fill: none;
-    stroke-width: 2.8;
-    animation: progress 1s ease-out forwards;
-  }
-  
-  @keyframes progress {
-    0% {
-      stroke-dasharray: 0 100;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* end canvas */
+
+.head-page-3{
+    display: flex;
+    flex-direction: column;
+}
+.mainHeaderText-page-3{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 62px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+.subText-page-3-Wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 60px 0 ;
+}
+.subText-page-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-family: 'Chakra Petch','Josefin Sans','Raleway', sans-serif;
+    max-width: 300px;
+    text-align: center;
+}
+.svgContainer{
+    display: flex;
+    justify-content: center;
+    margin-top:50px;
+}
+.percentageSVG{
+    font-family: 'Chakra Petch','Josefin Sans','Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 69px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 122;
+}
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sliderWrapper{
+    min-height: 100px;
+}
+.leftArrow{
+   flex:1;
+   display: flex;
+   justify-content: flex-end;
+   font-size: 40px;
+}
+.rightArrow{
+   flex:1;    
+   font-size: 40px;
+}
+.sliderContent{
+    flex:2;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+li{
+    list-style-type: none;
+    line-height: 16px;
+}
+.sliderHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    margin: auto 20px auto 20px;
+    max-width: 300px;
+}
+@media only screen and (max-width: 1050px) {
+    .sliderContent {
+        flex:4;
     }
-  }
-  
-  .circular-chart.white .circle {
-    stroke: #fff;
-  }
-  
-  .percentage {
-    fill: #666;
-    font-family: sans-serif;
-    font-size: 0.5em;
-    text-anchor: middle;
-  }
+}
+@media only screen and (max-width: 800px) {
+    .sliderContent {
+        flex:4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sliderHeader{
+        margin-bottom: 20px;
+    }
+    
+}
