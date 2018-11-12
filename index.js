@@ -52,7 +52,7 @@ function showDivs(n) {
 }
 function plusDiv(n=+1){
   showDivs(slideIndex += n);
-  //setTimeout(plusDiv, 2000);
+  setTimeout(plusDiv, 2000);
 }
 plusDiv(+1);
 
