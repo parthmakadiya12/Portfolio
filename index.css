@@ -176,6 +176,15 @@ img{
     font-size: 50px;
     font-weight: bold;
 }
+@media screen and (max-width: 600px) {
+    .mainHeaderText-page-2 , .mainHeaderText-page-3{
+    font-size: 38px !important;
+    margin: 30px;
+    }
+    .last{
+        height: auto;
+    }
+}
 .item-page-2{
     flex:1;
     width: -webkit-fill-available;
