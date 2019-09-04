@@ -21,7 +21,7 @@
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
     "pre-commit": "^1.2.2",
-    "style-loader": "^0.23.1",
+    "style-loader": "^0.23.1"
   },
   "pre-commit": [
     "test"

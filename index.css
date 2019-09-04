@@ -181,9 +181,6 @@ img{
     font-size: 38px !important;
     margin: 30px;
     }
-    .last{
-        height: auto;
-    }
 }
 .item-page-2{
     flex:1;
@@ -219,7 +216,8 @@ svg{
 
 
 .progress-ring {
-  
+  height: 180px;
+  width:180px;
 }
 
 .progress-ring__circle {
